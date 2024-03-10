@@ -1,0 +1,9 @@
+position 100 100
+pen red
+rectangle 50 50
+draw rectangle 100 100
+circle 200
+draw circle 200
+triangle
+draw triangle
+clear
