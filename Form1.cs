@@ -4,12 +4,11 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace GraphicalProgrammingLanguage
+namespace WindowsFormsAppGagan11
 {
     public partial class MainForm : Form
     {
-        private List<string> individualCommands = new List<string>();
-        private List<string> completeProgram = new List<string>();
+        private List<string> programCommands = new List<string>();
         private Graphics graphics;
         private Pen pen = new Pen(Color.Black);
         private PointF currentPosition = PointF.Empty;
@@ -21,26 +20,20 @@ namespace GraphicalProgrammingLanguage
             graphics = drawingPanel.CreateGraphics();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            string command = individualTextBox.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(command))
-            {
-                individualCommands.Add(command);
-                UpdateIndividualCommandsBox();
-                individualTextBox.Clear();
-            }
-        }
-
-        private void clearButton_Click(object sender, EventArgs e)
-        {
-            individualCommands.Clear();
-            UpdateIndividualCommandsBox();
-        }
-
-        private void runButton_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             ExecuteProgram();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            LoadProgramFromFile();
+        }
+       
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+            SaveProgramToFile();
         }
 
         private void ExecuteProgram()
@@ -48,20 +41,20 @@ namespace GraphicalProgrammingLanguage
             ClearDrawingArea();
             currentPosition = PointF.Empty;
 
-            foreach (string cmd in completeProgram)
+            foreach (string cmd in programCommands)
             {
                 try
                 {
+                    textBox1.Text = cmd;
                     ParseAndExecuteCommand(cmd);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Input string was in correct format", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
                 }
             }
-
-            // Refresh the drawing panel to display the drawn shapes
-            drawingPanel.Refresh();
         }
 
         private void ParseAndExecuteCommand(string command)
@@ -99,25 +92,29 @@ namespace GraphicalProgrammingLanguage
                     SetFillMode(parts);
                     break;
                 default:
-                    throw new ArgumentException($"Invalid command: {command}");
+                    //throw new ArgumentException($"Invalid command: {command}");
+                    break;
             }
         }
 
         private void MoveTo(string[] parts)
         {
-            if (parts.Length != 3)
-                throw new ArgumentException("Invalid position command");
-
-            float x = float.Parse(parts[1]);
-            float y = float.Parse(parts[2]);
-
-            currentPosition = new PointF(x, y);
+            float x, y;
+            if (parts.Length >= 3 && float.TryParse(parts[1], out x) && float.TryParse(parts[2], out y))
+            {
+                currentPosition = new PointF(x, y);
+            }
+            else
+            {
+                // Handle invalid input command format
+                MessageBox.Show("Invalid input command format for position.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void SetPenColor(string[] parts)
         {
-            if (parts.Length != 2)
-                throw new ArgumentException("Invalid pen command");
+          
 
             string colorName = parts[1];
             pen.Color = Color.FromName(colorName);
@@ -125,28 +122,19 @@ namespace GraphicalProgrammingLanguage
 
         private void DrawTo(string[] parts)
         {
-            if (parts.Length >= 3)
-            {
-                if (float.TryParse(parts[1], out float x) && float.TryParse(parts[2], out float y))
-                {
-                    // Move the current position to the specified coordinates
-                    MoveTo(new string[] { "position", x.ToString(), y.ToString() });
-                }
-                else
-                {
-                    MessageBox.Show("Invalid coordinates.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Invalid command.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
+
+            float x = float.Parse(parts[1]);
+            float y = float.Parse(parts[2]);
+
+            // Move the current position to the specified coordinates
+            MoveTo(new string[] { "position", x.ToString(), y.ToString() });
         }
 
         private void DrawRectangle(string[] parts)
         {
-            if (parts.Length != 3)
-                throw new ArgumentException("Invalid rectangle command");
+            //if (parts.Length != 3)
+              //  throw new ArgumentException("Invalid rectangle command");
 
             int width = int.Parse(parts[1]);
             int height = int.Parse(parts[2]);
@@ -159,8 +147,7 @@ namespace GraphicalProgrammingLanguage
 
         private void DrawCircle(string[] parts)
         {
-            if (parts.Length != 2)
-                throw new ArgumentException("Invalid circle command");
+            
 
             int radius = int.Parse(parts[1]);
 
@@ -198,37 +185,17 @@ namespace GraphicalProgrammingLanguage
 
         private void SetFillMode(string[] parts)
         {
-            if (parts.Length != 2)
-                throw new ArgumentException("Invalid fill command");
+            //if (parts.Length != 2)
+              //  throw new ArgumentException("Invalid fill command");
 
             fillShape = parts[1].ToLower() == "on";
-        }
-
-        private void saveButton_Click(object sender, EventArgs e)
-        {
-            SaveProgramToFile();
-        }
-
-        private void LoadProgramFromFile()
-        {
-            completeProgram.Clear();
-            using (StreamReader reader = new StreamReader("program.txt"))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    completeProgram.Add(line);
-                }
-            }
-
-            MessageBox.Show("Program loaded from program.txt", "Load Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void SaveProgramToFile()
         {
             using (StreamWriter writer = new StreamWriter("program.txt"))
             {
-                foreach (string cmd in completeProgram)
+                foreach (string cmd in programCommands)
                 {
                     writer.WriteLine(cmd);
                 }
@@ -237,40 +204,29 @@ namespace GraphicalProgrammingLanguage
             MessageBox.Show("Program saved to program.txt", "Save Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void UpdateIndividualCommandsBox()
+        private void LoadProgramFromFile()
         {
-            individualCommandsListBox.Items.Clear();
-            individualCommandsListBox.Items.AddRange(individualCommands.ToArray());
-        }
-
-        private void individualCommandsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (individualCommandsListBox.SelectedIndex >= 0)
+            programCommands.Clear();
+            using (StreamReader reader = new StreamReader("program.txt"))
             {
-                individualTextBox.Text = individualCommandsListBox.SelectedItem.ToString();
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    textBox1.Text=line;
+                    programCommands.Add(line);
+                    txtProgram.AppendText(line + Environment.NewLine);
+                    
+                }
             }
+
+            MessageBox.Show("Program loaded from program.txt", "Load Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void addToCompleteButton_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(individualTextBox.Text))
-            {
-                completeProgram.Add(individualTextBox.Text);
-                UpdateCompleteProgramBox();
-                individualTextBox.Clear();
-            }
+
         }
 
-        private void UpdateCompleteProgramBox()
-        {
-            completeProgramTextBox.Clear();
-            completeProgramTextBox.AppendText(string.Join(Environment.NewLine, completeProgram));
-        }
-
-        private void clearCompleteButton_Click(object sender, EventArgs e)
-        {
-            completeProgram.Clear();
-            UpdateCompleteProgramBox();
-        }
+        
     }
 }

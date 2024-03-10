@@ -1,13 +1,9 @@
-position 150 150
+position 100 100
 pen red
-rectangle 100 100
-draw rectangle 175 175
-circle 100
-draw circle 150
+rectangle 50 50
+draw rectangle 100 100
+circle 200
+draw circle 200
 triangle
 draw triangle
 clear
-reset
-
-
-
