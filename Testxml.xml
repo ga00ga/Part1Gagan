@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>TestProjectPart1</name>
+	</assembly>
+	<members>
+		<member name="T:TestProjectPart1.Tests">
+			<summary>
+				Represents a class containing unit tests for the MainForm class in the WindowsFormsAppGagan11 namespace.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.#ctor">
+			<summary>
+				Initializes a new instance of the <see cref="Tests"/> class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.Setup">
+			<summary>
+				Sets up the test environment before each unit test method is executed.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestMoveTo_ValidInput">
+			<summary>
+				Verifies the behavior of the MoveTo method in the MainForm class with valid input.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestSetPenColor">
+			<summary>
+				Verifies the behavior of the SetPenColor method in the MainForm class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestDrawRectangle">
+			<summary>
+				Verifies the behavior of the DrawRectangle method in the MainForm class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestDrawCircle">
+			<summary>
+				Verifies the behavior of the DrawCircle method in the MainForm class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestDrawTriangle">
+			<summary>
+				Verifies the behavior of the DrawTriangle method in the MainForm class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestClearDrawingArea">
+			<summary>
+				Verifies the behavior of the ClearDrawingArea method in the MainForm class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestResetPenPosition">
+			<summary>
+				Verifies the behavior of the ResetPenPosition method in the MainForm class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestSetFillMode">
+			<summary>
+				Verifies the behavior of the SetFillMode method in the MainForm class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestSaveProgramToFile">
+			<summary>
+				Verifies the behavior of the SaveProgramToFile method in the MainForm class.
+			</summary>
+		</member>
+		<member name="M:TestProjectPart1.Tests.TestLoadProgramFromFile">
+			<summary>
+				Verifies the behavior of the LoadProgramFromFile method in the MainForm class.
+			</summary>
+		</member>
+	</members>
+</doc>
+
