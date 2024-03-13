@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>WindowsFormsAppGagan11</name>
+	</assembly>
+	<members>
+		<member name="T:WindowsFormsAppGagan11.MainForm">
+			<summary>
+				Represents a partial class that defines the main form of the application.
+			</summary>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.#ctor">
+			<summary>
+				Initializes a new instance of the <see cref="MainForm"/> class.
+			</summary>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.button1_Click(System.Object,System.EventArgs)">
+			<summary>
+				Handles the click event of button1 to execute the program.
+			</summary>
+			<param name="sender">The source of the event.</param>
+			<param name="e">
+				An <see cref="System.EventArgs"/> that contains the event data.
+			</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.button2_Click_1(System.Object,System.EventArgs)">
+			<summary>
+				Handles the click event of button2 to load a program from a file.
+			</summary>
+			<param name="sender">The source of the event.</param>
+			<param name="e">
+				An <see cref="System.EventArgs"/> that contains the event data.
+			</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.button3_Click_1(System.Object,System.EventArgs)">
+			<summary>
+				Handles the click event of button3 to save the program to a file.
+			</summary>
+			<param name="sender">The source of the event.</param>
+			<param name="e">
+				An <see cref="System.EventArgs"/> that contains the event data.
+			</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.ExecuteProgram">
+			<summary>
+				Executes the program by parsing and executing each command in <see cref="programCommands"/>.
+			</summary>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.ParseAndExecuteCommand(System.String)">
+			<summary>
+				Parses and executes the specified command.
+			</summary>
+			<param name="command">The command to parse and execute.</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.MoveTo(System.String[])">
+			<summary>
+				Moves the current position to the specified coordinates.
+			</summary>
+			<param name="parts">An array containing the coordinates.</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.SetPenColor(System.String[])">
+			<summary>
+				Sets the pen color based on the specified color name.
+			</summary>
+			<param name="parts">An array containing the color name.</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.DrawTo(System.String[])">
+			<summary>
+				Draws to the specified coordinates.
+			</summary>
+			<param name="parts">An array containing the coordinates.</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.DrawRectangle(System.String[])">
+			<summary>
+				Draws a rectangle based on the specified dimensions.
+			</summary>
+			<param name="parts">An array containing the dimensions.</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.DrawCircle(System.String[])">
+			<summary>
+				Draws a circle based on the specified radius.
+			</summary>
+			<param name="parts">An array containing the radius.</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.DrawTriangle">
+			<summary>
+				Draws a triangle.
+			</summary>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.ClearDrawingArea">
+			<summary>
+				Clears the drawing area.
+			</summary>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.ResetPenPosition">
+			<summary>
+				Resets the pen position.
+			</summary>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.SetFillMode(System.String[])">
+			<summary>
+				Sets the fill mode based on the specified command.
+			</summary>
+			<param name="parts">An array containing the fill command.</param>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.SaveProgramToFile">
+			<summary>
+				Saves the program commands to a file named program.txt.
+			</summary>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.LoadProgramFromFile">
+			<summary>
+				Loads the program commands from a file named program.txt.
+			</summary>
+		</member>
+		<member name="M:WindowsFormsAppGagan11.MainForm.MainForm_Load(System.Object,System.EventArgs)">
+			<summary>
+				Handles the load event of the MainForm.
+			</summary>
+			<param name="sender">The source of the event.</param>
+			<param name="e">
+				An <see cref="System.EventArgs"/> that contains the event data.
+			</param>
+		</member>
+	</members>
+</doc>
