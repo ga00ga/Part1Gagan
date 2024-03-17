@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>WindowsFormsAppGagan11</name>
+	</assembly>
+	<members>
+		<!-- MainForm class -->
+		<member name="T:WindowsFormsAppGagan11.MainForm">
+			<summary>
+				Represents the main form of the application.
+			</summary>
+		</member>
+
+		<!-- MainForm constructor -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.#ctor">
+			<summary>
+				Initializes a new instance of the MainForm class.
+			</summary>
+		</member>
+
+		<!-- button1_Click method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.button1_Click(System.Object,System.EventArgs)">
+			<summary>
+				Executes the program when button1 is clicked.
+			</summary>
+		</member>
+
+		<!-- button3_Click method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.button3_Click(System.Object,System.EventArgs)">
+			<summary>
+				Loads a program from a file when button3 is clicked.
+			</summary>
+		</member>
+
+		<!-- button4_Click method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.button4_Click(System.Object,System.EventArgs)">
+			<summary>
+				Saves the program to a file when button4 is clicked.
+			</summary>
+		</member>
+
+		<!-- ExecuteProgram method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.ExecuteProgram">
+			<summary>
+				Executes the program by parsing and executing commands from text boxes.
+			</summary>
+		</member>
+
+		<!-- ParseAndExecuteCommand method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.ParseAndExecuteCommand(System.String)">
+			<summary>
+				Parses and executes a single command.
+			</summary>
+			<param name="command">The command to parse and execute.</param>
+		</member>
+
+		<!-- MoveTo method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.MoveTo(System.String[])">
+			<summary>
+				Moves the current position to the specified coordinates.
+			</summary>
+			<param name="parts">An array containing the command parts.</param>
+		</member>
+
+		<!-- SetPenColor method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.SetPenColor(System.String[])">
+			<summary>
+				Sets the color of the pen.
+			</summary>
+			<param name="parts">An array containing the command parts.</param>
+		</member>
+
+		<!-- DrawTo method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.DrawTo(System.String[])">
+			<summary>
+				Draws a line from the current position to the specified coordinates.
+			</summary>
+			<param name="parts">An array containing the command parts.</param>
+		</member>
+
+		<!-- DrawRectangle method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.DrawRectangle(System.String[])">
+			<summary>
+				Draws a rectangle with the specified dimensions.
+			</summary>
+			<param name="parts">An array containing the command parts.</param>
+		</member>
+
+		<!-- DrawCircle method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.DrawCircle(System.String[])">
+			<summary>
+				Draws a circle with the specified radius.
+			</summary>
+			<param name="parts">An array containing the command parts.</param>
+		</member>
+
+		<!-- DrawTriangle method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.DrawTriangle">
+			<summary>
+				Draws a triangle.
+			</summary>
+		</member>
+
+		<!-- ClearDrawingArea method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.ClearDrawingArea">
+			<summary>
+				Clears the drawing area.
+			</summary>
+		</member>
+
+		<!-- ResetPenPosition method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.ResetPenPosition">
+			<summary>
+				Resets the pen position to the origin.
+			</summary>
+		</member>
+
+		<!-- SetFillMode method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.SetFillMode(System.String[])">
+			<summary>
+				Sets the fill mode for drawing shapes.
+			</summary>
+			<param name="parts">An array containing the command parts.</param>
+		</member>
+
+		<!-- SaveProgramToFile method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.SaveProgramToFile">
+			<summary>
+				Saves the program to a file.
+			</summary>
+		</member>
+
+		<!-- LoadProgramFromFile method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.LoadProgramFromFile">
+			<summary>
+				Loads a program from a file.
+			</summary>
+		</member>
+
+		<!-- textBox1_TextChanged method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.textBox1_TextChanged(System.Object,System.EventArgs)">
+			<summary>
+				Handles the TextChanged event of textBox1.
+			</summary>
+		</member>
+
+		<!-- txtProgram_TextChanged method -->
+		<member name="M:WindowsFormsAppGagan11.MainForm.txtProgram_TextChanged(System.Object,System.EventArgs)">
+			<summary>
+				Handles the TextChanged event of txtProgram.
+			</summary>
+		</member>
+	</members>
+</doc>
