@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>WindowsFormsAppGagan11.Tests</name>
+	</assembly>
+	<members>
+		<!-- MainFormTests class -->
+		<member name="T:WindowsFormsAppGagan11.Tests.MainFormTests">
+			<summary>
+				Represents a set of tests for the MainForm class.
+			</summary>
+		</member>
+
+		<!-- Setup method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.Setup">
+			<summary>
+				Sets up the test fixture by initializing the mainForm instance.
+			</summary>
+		</member>
+
+		<!-- MoveTo_ValidInput_PositionUpdated method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.MoveTo_ValidInput_PositionUpdated">
+			<summary>
+				Tests whether the MoveTo method updates the position correctly with valid input.
+			</summary>
+		</member>
+
+		<!-- MoveTo_InvalidInput_ExceptionThrown method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.MoveTo_InvalidInput_ExceptionThrown">
+			<summary>
+				Tests whether the MoveTo method throws an exception with invalid input.
+			</summary>
+		</member>
+
+		<!-- SetPenColor_ValidInput_ColorUpdated method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.SetPenColor_ValidInput_ColorUpdated">
+			<summary>
+				Tests whether the SetPenColor method updates the pen color correctly with valid input.
+			</summary>
+		</member>
+
+		<!-- DrawTo_PositionChanged method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.DrawTo_PositionChanged">
+			<summary>
+				Tests whether the DrawTo method changes the position correctly.
+			</summary>
+		</member>
+
+		<!-- DrawRectangle_RectangleDrawn method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.DrawRectangle_RectangleDrawn">
+			<summary>
+				Tests whether a rectangle is drawn correctly.
+			</summary>
+		</member>
+
+		<!-- DrawCircle_CircleDrawn method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.DrawCircle_CircleDrawn">
+			<summary>
+				Tests whether a circle is drawn correctly.
+			</summary>
+		</member>
+
+		<!-- DrawTriangle_TriangleDrawn method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.DrawTriangle_TriangleDrawn">
+			<summary>
+				Tests whether a triangle is drawn correctly.
+			</summary>
+		</member>
+
+		<!-- ClearDrawingArea_DrawingAreaCleared method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.ClearDrawingArea_DrawingAreaCleared">
+			<summary>
+				Tests whether the drawing area is cleared correctly.
+			</summary>
+		</member>
+
+		<!-- ResetPenPosition_PositionReset method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.ResetPenPosition_PositionReset">
+			<summary>
+				Tests whether the pen position is reset correctly.
+			</summary>
+		</member>
+
+		<!-- SetFillMode_FillModeChanged method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.SetFillMode_FillModeChanged">
+			<summary>
+				Tests whether the fill mode is changed correctly.
+			</summary>
+		</member>
+
+		<!-- SaveProgramToFile_ProgramSaved method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.SaveProgramToFile_ProgramSaved">
+			<summary>
+				Tests whether the program is saved correctly to a file.
+			</summary>
+		</member>
+
+		<!-- LoadProgramFromFile_ProgramLoaded method -->
+		<member name="M:WindowsFormsAppGagan11.Tests.MainFormTests.LoadProgramFromFile_ProgramLoaded">
+			<summary>
+				Tests whether the program is loaded correctly from a file.
+			</summary>
+		</member>
+	</members>
+</doc>
